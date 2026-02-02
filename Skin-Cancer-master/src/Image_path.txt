@@ -1,0 +1,4 @@
+
+C:\Users\sundh\OneDrive\Desktop\Skin Cancer\skin_cancer_detection_project\data\split_data\test\malignant\ISIC_0024315.jpg
+
+C:\Users\sundh\OneDrive\Desktop\Skin Cancer\skin_cancer_detection_project\data\split_data\test\benign\ISIC_0024317.jpg

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skin Cancer Detection</title>
+    <style>
+        body {
+            background: #101820;
+            color: #f2f2f2;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding: 30px;
+        }
+        h1 {
+            color: #00bcd4;
+        }
+        .upload-box {
+            background: #1e2a38;
+            padding: 25px;
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0 0 15px #00bcd4;
+            max-width: 500px;
+        }
+        input[type="file"] {
+            margin: 10px;
+            color: #fff;
+        }
+        button {
+            background-color: #00bcd4;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        img {
+            width: 300px;
+            margin-top: 20px;
+            border-radius: 10px;
+            border: 2px solid #00bcd4;
+        }
+        .result {
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+        .Benign { color: #4CAF50; }
+        .Malignant { color: #f44336; }
+        .confidence {
+            font-size: 1.1em;
+            color: #00bcd4;
+        }
+        .message {
+            margin-top: 10px;
+            font-size: 1.1em;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>🩺 Skin Cancer Detection (CNN + SVM)</h1>
+
+    <div class="upload-box">
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <br><br>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if uploaded_image %}
+            <img src="{{ uploaded_image }}" alt="Uploaded Image">
+            <div class="result {{ prediction }}">
+                <h2>Prediction: {{ prediction }}</h2>
+            </div>
+            <div class="confidence">
+                Confidence: {{ confidence }}%
+            </div>
+            <div class="message">
+                {{ message }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
